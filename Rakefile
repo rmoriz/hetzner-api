@@ -7,7 +7,7 @@ begin
     gem.name = "hetzner-api"
     gem.summary = %Q{A small, unofficial wrapper for Hetzner.de's API (server management)}
     gem.description = %Q{A small, unofficial wrapper for Hetzner.de's API (server management)}
-    gem.email = "roland@moriz.de"
+    gem.email = "roland@rails.io"
     gem.homepage = "http://github.com/rmoriz/hetzner-api"
     gem.authors = ["Roland Moriz"]
     gem.add_development_dependency "rspec", ">= 1.2.9"

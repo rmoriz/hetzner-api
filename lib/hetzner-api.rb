@@ -15,7 +15,7 @@ module Hetzner
     include ::HTTParty
     format :json
     base_uri 'https://robot-ws.your-server.de'
-    
+        
     include Boot
     include Failover
     include Rdns
