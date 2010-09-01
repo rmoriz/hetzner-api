@@ -1,9 +1,13 @@
 = hetzner-api
 
-A HTTParty based wrapper for Hetzner.de's server management interface.
+A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server management interface.
+
 see http://wiki.hetzner.de/index.php/Robot_Webservice for details.
 
-This is not an official Hetzner AG software!
+== WARNING!
+
+This is not an official Hetzner AG project.
+
 The gem and the author are not related to Hetzner AG!
 
 <b>Use at your very own risk! Satisfaction NOT guaranteed!</b>
@@ -11,3 +15,7 @@ The gem and the author are not related to Hetzner AG!
 == Copyright
 
 Copyright (c) 2010 Roland Moriz. See LICENSE for details.
+
+{Ruby on Rails Entwicklung}[http://moriz.de/] -> Moriz GmbH
+
+{Ruby on Rails Hosting}[http://rails.io/] -> Rails.io
