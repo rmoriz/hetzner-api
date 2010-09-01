@@ -1,8 +1,8 @@
 = hetzner-api
 
-A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server management interface.
+A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server management API.
 
-see http://wiki.hetzner.de/index.php/Robot_Webservice for details.
+see http://wiki.hetzner.de/index.php/Robot_Webservice_en for details.
 
 == WARNING!
 
