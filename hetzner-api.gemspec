@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Roland Moriz"]
   s.date = %q{2010-09-02}
   s.description = %q{A small, unofficial wrapper for Hetzner.de's API (server management)}
-  s.email = %q{roland@moriz.de}
+  s.email = %q{roland@rails.io}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "hetzner-api.gemspec",
      "lib/api/boot.rb",
      "lib/api/failover.rb",
      "lib/api/rdns.rb",
