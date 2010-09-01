@@ -4,14 +4,13 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "hetzner"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{A small wrapper for Hetzner.de's API (Server, DNS)}
+    gem.name = "hetzner-api"
+    gem.summary = %Q{A small, unofficial wrapper for Hetzner.de's API (server management)}
+    gem.description = %Q{A small, unofficial wrapper for Hetzner.de's API (server management)}
     gem.email = "roland@moriz.de"
-    gem.homepage = "http://github.com/rmoriz/hetzner"
+    gem.homepage = "http://github.com/rmoriz/hetzner-api"
     gem.authors = ["Roland Moriz"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
