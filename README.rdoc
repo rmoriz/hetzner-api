@@ -6,7 +6,9 @@ see http://wiki.hetzner.de/index.php/Robot_Webservice_en for details.
 
 == Installation
 
-<b>gem install hetzner-api</b> (you might want to use sudo...)
+<b>gem install hetzner-api</b> 
+
+(you may want to use sudo for that.)
 
 == Example
 
