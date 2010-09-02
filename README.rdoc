@@ -4,6 +4,24 @@ A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server
 
 see http://wiki.hetzner.de/index.php/Robot_Webservice_en for details.
 
+== Example
+
+h = Hetzner::API.new "username", "password"
+
+h.reset? "111.111.111.111"
+
+h.enable_rescue! "111.111.111.111", "linux", "64"
+
+h.reset! "111.111.111.111", :sw
+
+h.wol! "111.111.111.222"
+
+
+== Readme (rdoc)
+
+<b>http://rdoc.info/github/rmoriz/hetzner-api</b>
+
+
 == WARNING!
 
 This is not an official Hetzner AG project.
