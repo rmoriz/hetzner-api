@@ -6,15 +6,15 @@ see http://wiki.hetzner.de/index.php/Robot_Webservice_en for details.
 
 == Example
 
-h = Hetzner::API.new "username", "password"
+<tt>h = Hetzner::API.new "username", "password"</tt>
 
-h.reset? "111.111.111.111"
+<tt>h.reset? "111.111.111.111"</tt>
 
-h.enable_rescue! "111.111.111.111", "linux", "64"
+<tt>h.enable_rescue! "111.111.111.111", "linux", "64"</tt>
 
-h.reset! "111.111.111.111", :sw
+<tt>h.reset! "111.111.111.111", :sw</tt>
 
-h.wol! "111.111.111.222"
+<tt>h.wol! "111.111.111.222"</tt>
 
 
 == Readme (rdoc)
