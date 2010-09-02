@@ -22,6 +22,7 @@ see http://wiki.hetzner.de/index.php/Robot_Webservice_en for details.
 
 <tt>h.wol! "111.111.111.222"</tt>
 
+<tt>h.rdns! "111.111.111.222", "web100.falkenstein.de.example.com"</tt>
 
 == Readme (rdoc)
 
