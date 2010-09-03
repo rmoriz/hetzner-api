@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/rmoriz/hetzner-api"
     gem.authors = ["Roland Moriz"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_dependency "httparty", ">= 0.6.1"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
