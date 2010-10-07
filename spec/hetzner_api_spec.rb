@@ -4,7 +4,7 @@ require 'spec_helper'
 describe "Reset" do
   describe "query" do
     before(:all) do
-      @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
     end
 
     it "should list available reset options for all servers" do
@@ -34,7 +34,7 @@ describe "Reset" do
 
   describe "execution" do
     before(:all) do
-      @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
     end
     
     it "should reset the specific IP" do
@@ -105,7 +105,7 @@ end
 
 describe "Rdns" do
   before(:all) do
-    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
   end
   
   it "should query the current rdns status" do
@@ -130,11 +130,12 @@ end
 
 describe "VNC" do
   before(:all) do
-    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
   end
   
   it "should be able to query vnc boot status" do
     result = @h.boot_vnc? WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
     result['vnc']['server_ip'].should == WORKING_IP
     result['vnc']['active'].should be_false
     result['vnc']['password'].should be_nil
@@ -142,6 +143,7 @@ describe "VNC" do
   
   it "should be able to set vnc boot status" do
     result = @h.boot_vnc! WORKING_IP, 'Fedora-13', '32', 'en_US'
+    result.response.should be_an_instance_of Net::HTTPOK
     result['vnc']['server_ip'].should == WORKING_IP
     result['vnc']['active'].should be_true
     result['vnc']['password'].should_not be_nil
@@ -149,6 +151,7 @@ describe "VNC" do
   
   it "should be able to disable vnc boot status" do
     result = @h.disable_boot_vnc! WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
     result['vnc']['server_ip'].should == WORKING_IP
     result['vnc']['active'].should be_false
     result['vnc']['password'].should be_nil
@@ -157,16 +160,18 @@ end
 
 describe "WOL" do
   before(:all) do
-    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
   end
   
   it "should be able to query WOL status" do
     result = @h.wol? WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
     result['wol']['server_ip'].should == WORKING_IP
   end
   
   it "should be able to send a WOL notification" do
     result = @h.wol! WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
     result['wol']['server_ip'].should == WORKING_IP
   end
 end

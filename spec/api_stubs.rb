@@ -52,10 +52,30 @@ FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
                      :response => fixture('get_with_ip.raw')
 
 FakeWeb.register_uri :post,   uri("#{WORKING_IP}/rescue?arch=64&os=linux"),
-                     :response => fixture('rescue/post_with_ip.raw')
+                     :response => fixture('rescue/post.raw')
 
 FakeWeb.register_uri :delete, uri("#{WORKING_IP}/rescue"),
-                     :response => fixture('rescue/delete_with_ip.raw')
+                     :response => fixture('rescue/delete.raw')
+
+FakeWeb.register_uri :get,    uri("#{WORKING_IP}/vnc"),
+                     :response => fixture('vnc/get.raw')
+
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}/vnc?arch=32&lang=en_US&dist=Fedora-13"),
+                     :response => fixture('vnc/post.raw')                     
+
+FakeWeb.register_uri :delete, uri("#{WORKING_IP}/vnc"),
+                     :response => fixture('vnc/delete.raw')  
+
+
+@resource = 'wol'
+
+FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
+                     :response => fixture('get.raw')  
+
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}"),
+                     :response => fixture('post.raw')  
+
+          
 
 
 @resource = 'rdns'

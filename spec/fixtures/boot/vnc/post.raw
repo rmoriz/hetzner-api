@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "vnc": {
+    "server_ip": "11.11.11.111",
+    "dist": "Fedora-13",
+    "arch": 32,
+    "lang" : "en_US",
+    "active": true,
+    "password": "u7Ng5j43"
+  }
+}
