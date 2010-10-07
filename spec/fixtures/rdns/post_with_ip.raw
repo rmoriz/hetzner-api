@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "rdns": {
+    "ip": "11.11.11.111",
+    "ptr": "testen.de"
+  }
+}

@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "boot": {
+    "rescue": {
+      "server_ip" : "123.123.123.123",
+      "os": ["linux","freebsd","opensolaris","vkvm"],
+      "arch": [64,32],
+      "active": false,
+      "password": null
+    },
+    "vnc": {
+      "server_ip": "123.123.123.123",
+      "dist": ["centOS-5.0","Fedora-6","openSUSE-10.2"],
+      "arch": [64,32],
+      "lang": ["de_DE","en_US"],
+      "active": false,
+      "password": null
+    },
+    "windows": {
+      "server_ip": "123.123.123.123",
+      "dist": null,
+      "lang": null,
+      "active": false,
+      "password": null
+    }
+  }
+}

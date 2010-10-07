@@ -1,15 +1,15 @@
 require 'httparty'
 require 'forwardable'
 
-require 'hetzner-api/api/cli'
-require 'hetzner-api/api/boot'
-require 'hetzner-api/api/failover'
-require 'hetzner-api/api/rdns'
-require 'hetzner-api/api/rescue'
-require 'hetzner-api/api/reset'
-require 'hetzner-api/api/vnc'
-require 'hetzner-api/api/windows'
-require 'hetzner-api/api/wol'
+require 'hetzner/api/cli'
+require 'hetzner/api/boot'
+require 'hetzner/api/failover'
+require 'hetzner/api/rdns'
+require 'hetzner/api/rescue'
+require 'hetzner/api/reset'
+require 'hetzner/api/vnc'
+require 'hetzner/api/windows'
+require 'hetzner/api/wol'
 
 module Hetzner
   class API

@@ -5,7 +5,7 @@ RESET_IP_NOT_AVAILABLE = '11.11.11.223'
 RESET_IP_MANUAL_ACTIVE = '11.11.11.224'
 RESET_IP_FAILED        = '11.11.11.225'
 
-TEST_PTR     = ''
+TEST_PTR     = 'testen.de'
 RDNS_TEST_IP = ''
 
 API_SERVER   = 'robot-ws.your-server.de'

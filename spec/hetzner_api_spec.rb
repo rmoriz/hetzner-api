@@ -71,61 +71,66 @@ end
 describe "Boot" do
   describe "query boot configuration" do 
     before(:all) do
-      @h = Hetzner::API.new(USERNAME, PASSWORD)
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
     end
-    
+  
     it "should display the boot configuration" do
       result = @h.boot? WORKING_IP 
-      result.should == {"boot"=>{"vnc"=>{"arch"=>[64, 32], "server_ip"=>WORKING_IP, "lang"=>["de_DE", "en_US", "fr_FR"], "dist"=>["centOS-5.3", "centOS-5.4", "centOS-5.5", "Fedora-11", "Fedora-12", "Fedora-13", "Fedora-9", "openSUSE-11.0", "openSUSE-11.1", "openSUSE-11.3"], "password"=>nil, "active"=>false}, "rescue"=>{"arch"=>[64, 32], "os"=>["linux", "freebsd", "opensolaris", "vkvm"], "server_ip"=>WORKING_IP, "password"=>nil, "active"=>false}, "windows"=>{"server_ip"=>WORKING_IP, "lang"=>nil, "dist"=>nil, "password"=>nil, "active"=>false}}}
+      result.response.should be_an_instance_of Net::HTTPOK
     end
   end
+
   
-  describe "Rescue" do
+  describe "the rescue system" do
     before(:all) do
-      @h = Hetzner::API.new(USERNAME, PASSWORD)
-    end
-    it "should be able to activate" do
-      result = @h.enable_rescue! WORKING_IP
-      
-      # {"rescue"=>{"arch"=>64, "os"=>"linux", "server_ip"=>WORKING_IP, "password"=>"h9JbXPz8", "active"=>true}} 
-      result['rescue']['arch'].should == 64
-      result['rescue']['os'].should == 'linux'
-      result['rescue']['active'].should be_true
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
     end
     
+    it "should be able to activate" do
+      result = @h.enable_rescue! WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+
+      # {"rescue"=>{"arch"=>64, "os"=>"linux", "server_ip"=>WORKING_IP, "password"=>"h9JbXPz8", "active"=>true}} 
+      #result['rescue']['arch'].should == 64
+      #result['rescue']['os'].should == 'linux'
+      #result['rescue']['active'].should be_true
+    end
+       
     it "should be able to deactivate" do
       result = @h.disable_rescue! WORKING_IP
-      result.should == {"rescue"=>{"arch"=>[64, 32], "os"=>["linux", "freebsd", "opensolaris", "vkvm"], "server_ip"=>WORKING_IP, "password"=>nil, "active"=>false}}
+      result.response.should be_an_instance_of Net::HTTPOK
     end
   end
 end
 
 describe "Rdns" do
   before(:all) do
-    @h = Hetzner::API.new(USERNAME, PASSWORD)
+    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
   end
   
   it "should query the current rdns status" do
     result = @h.rdns? WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
     result['rdns']['ip'].should == WORKING_IP
     result['rdns']['ptr'].should == TEST_PTR
   end
   
   it "should be able to set a new ptr" do
-    result = @h.rdns! RDNS_WORKING_IP, 'testen.de'
-    result['rdns']['ip'].should == RDNS_WORKING_IP
-    result['rdns']['ptr'].should == 'testen.de'
+    result = @h.rdns! WORKING_IP, TEST_PTR
+    result.response.should be_an_instance_of Net::HTTPOK    
+    result['rdns']['ip'].should  == WORKING_IP
+    result['rdns']['ptr'].should == TEST_PTR
   end
   
   it "should be able to remove a new ptr" do
-    result = @h.delete_rdns! RDNS_WORKING_IP
-    puts result
+    result = @h.delete_rdns! WORKING_IP
+    result.response.should be_an_instance_of Net::HTTPOK
   end
 end
 
 describe "VNC" do
   before(:all) do
-    @h = Hetzner::API.new(USERNAME, PASSWORD)
+    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
   end
   
   it "should be able to query vnc boot status" do
@@ -152,7 +157,7 @@ end
 
 describe "WOL" do
   before(:all) do
-    @h = Hetzner::API.new(USERNAME, PASSWORD)
+    @h = Hetzner::API.new(API_USERNAME, API_PASSWORD)
   end
   
   it "should be able to query WOL status" do
