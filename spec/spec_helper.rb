@@ -1,11 +1,8 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require "spec_constants"
+require "api_stubs"
 
-require 'rubygems'
-require 'hetzner-api'
-require 'spec'
-require 'spec/autorun'
-
-Spec::Runner.configure do |config|
-  
+RSpec::Matchers.define :have_JSON_error_code do |expected|
+  match do |actual|
+    actual['error']['code'] == expected.to_s
+  end
 end

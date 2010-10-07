@@ -1,0 +1,4 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"reset":{"server_ip":"78.46.50.215","type":["man","hw","sw"]}}

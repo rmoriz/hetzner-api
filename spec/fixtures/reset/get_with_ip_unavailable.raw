@@ -1,0 +1,8 @@
+HTTP/1.1 404 Not Found
+Date: Thu, 07 Oct 2010 15:11:38 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.14
+Content-Length: 79
+Content-Type: application/json
+
+{"error":{"status":404,"code":"RESET_NOT_AVAILABLE","message":""}}

@@ -1,0 +1,4 @@
+HTTP/1.1 409
+Content-Type: application/json
+
+{"error":{"status":409,"code":"RESET_MANUAL_ACTIVE","message":""}}
