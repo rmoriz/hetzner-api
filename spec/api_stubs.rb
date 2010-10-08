@@ -7,9 +7,10 @@ def fixture(path)
   file
 end
 
-def uri(path = nil)
+def uri(path = nil, args = nil)
   url = "https://#{API_USERNAME}:#{API_PASSWORD}@#{API_SERVER}/#{@resource}"
   url << "/#{path}" if path
+  url << "#{args}"  if args
   url
 end
 
@@ -87,5 +88,24 @@ FakeWeb.register_uri :post,   uri("#{WORKING_IP}?ptr=testen.de"),
 
 FakeWeb.register_uri :delete, uri("#{WORKING_IP}"),
                      :response => fixture('delete_with_ip.raw')
+
+
+@resource = 'ip'
+
+FakeWeb.register_uri :get,    uri,
+                     :response => fixture('get.raw')
+
+FakeWeb.register_uri :get,    uri(nil, "?server_ip=#{WORKING_IP}"),
+                     :response => fixture('get_with_server_ip.raw')
+                                          
+FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
+                     :response => fixture('get_with_ip.raw')
+                                          
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}?traffic_warnings=true&traffic_monthly=2342"),
+                     :response => fixture('post_activate_with_data.raw')
+                     
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}?traffic_warnings=false"),
+                     :response => fixture('post_deactivate_with_data.raw')
+
 
 #pp FakeWeb::Registry.instance.uri_map

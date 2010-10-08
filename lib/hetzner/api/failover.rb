@@ -4,7 +4,7 @@ module Hetzner
       # queries the failover status of one IP address or all failover IP addresses of the account
       def failover?(ip = nil)
         path = "/failover"
-        path << "/#{ip}" if @ip
+        path << "/#{ip}" if ip
         perform_get path
       end
       

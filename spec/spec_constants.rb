@@ -8,6 +8,8 @@ RESET_IP_FAILED        = '11.11.11.225'
 TEST_PTR     = 'testen.de'
 RDNS_TEST_IP = ''
 
+TRAFFIC_LIMIT_IN_GIGABYTE = 2342
+
 API_SERVER   = 'robot-ws.your-server.de'
 API_USERNAME = 'myusername'
 API_PASSWORD = 'mycoolpassword'

@@ -175,3 +175,47 @@ describe "WOL" do
     result['wol']['server_ip'].should == WORKING_IP
   end
 end
+
+describe 'IP' do
+  describe "information" do
+    before(:all) do
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
+    end
+    it "should be able to display all IP addresses of the customer account" do
+      result = @h.ips?
+      result.response.should be_an_instance_of Net::HTTPOK
+      result.parsed_response.should have_at_least(2).entries
+    end  
+  
+    it "should be able to display a IP address of the customer account" do
+      result = @h.ip? WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+      result.parsed_response.should have(1).entry
+    end
+    
+    it "should be able to display all IP addresses for a given server IP address" do
+      result = @h.ips_for_server? WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+      result.parsed_response.should have(2).entry
+    end
+  end
+  
+  describe "manage traffic warnings" do
+    before(:all) do
+      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
+    end
+    
+    it "should be able to activate and set traffic warning limits on a specific IP address" do
+      result = @h.ip! WORKING_IP, :traffic_warnings => 'true', :traffic_monthly => TRAFFIC_LIMIT_IN_GIGABYTE
+      result.response.should be_an_instance_of Net::HTTPOK
+      result.parsed_response.should have(1).entry
+    end
+    
+    it "should be able to deactivate traffic warnings for a specific IP address" do
+      result = @h.ip! WORKING_IP, :traffic_warnings => 'false'
+      result.response.should be_an_instance_of Net::HTTPOK
+      result.parsed_response.should have(1).entry
+    end
+  end
+end
+
