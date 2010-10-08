@@ -10,6 +10,7 @@ require 'hetzner/api/wol'
 require 'hetzner/api/server'
 require 'hetzner/api/ip'
 require 'hetzner/api/subnet'
+require 'hetzner/api/traffic'
 require 'hetzner/api/boot/rescue'
 require 'hetzner/api/boot/vnc'
 require 'hetzner/api/boot/windows'
@@ -27,7 +28,10 @@ module Hetzner
     include Rdns
     include Reset
     include WOL
-
+    include Server
+    include IP
+    include Subnet
+    include Traffic
     
     def initialize(username, password)
       @auth = {:username => username, :password => password}
