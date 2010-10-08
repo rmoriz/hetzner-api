@@ -15,13 +15,12 @@ module Hetzner
       def boot(action, ip = '')
         generate_api_instance
         case action
-        when 'get'
-          require_ip ip
-          result = @api.boot?(ip)
-          pp result.parsed_response
-          #result.body.to_yaml
-        else
-          raise UnknownArgumentError, "'#{action}' is not a valid action!"
+          when 'get'
+            require_ip ip
+            result = @api.boot? ip
+            pp result.parsed_response
+          else
+            raise UnknownArgumentError, "'#{action}' is not a valid action!"
         end
       end
       

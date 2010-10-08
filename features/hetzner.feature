@@ -4,5 +4,5 @@ Feature: Hetzner
   I want to provider a decent, objective interface
   
   Scenario: Display boot options for one server
-    When I run "hetzner boot show 78.46.50.215 --username  --password "
-    Then the output should contain "178.46.50.215"
+    When I run "hetzner boot get 11.11.11.111 --username='myusername' --password='mycoolpassword'"
+    Then the output should contain "11.11.11.111"
