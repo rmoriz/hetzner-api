@@ -270,7 +270,7 @@ describe "Server" do
     end
     
     it "should be able to display all servers of the customer account" do
-      result = @h.server?
+      result = @h.servers?
       result.response.should be_an_instance_of Net::HTTPOK
       result.parsed_response.should have_at_least(2).entries
     end
