@@ -1,15 +1,20 @@
 require 'httparty'
-require 'forwardable'
+#require 'forwardable'
 
 require 'hetzner/api/cli'
-require 'hetzner/api/boot'
+
 require 'hetzner/api/failover'
 require 'hetzner/api/rdns'
-require 'hetzner/api/rescue'
 require 'hetzner/api/reset'
-require 'hetzner/api/vnc'
-require 'hetzner/api/windows'
 require 'hetzner/api/wol'
+require 'hetzner/api/server'
+require 'hetzner/api/ip'
+require 'hetzner/api/subnet'
+require 'hetzner/api/boot/rescue'
+require 'hetzner/api/boot/vnc'
+require 'hetzner/api/boot/windows'
+require 'hetzner/api/boot/plesk'
+require 'hetzner/api/boot'
 
 module Hetzner
   class API
@@ -20,11 +25,9 @@ module Hetzner
     include Boot
     include Failover
     include Rdns
-    include Rescue
     include Reset
-    include VNC
-    include Windows
     include WOL
+
     
     def initialize(username, password)
       @auth = {:username => username, :password => password}
