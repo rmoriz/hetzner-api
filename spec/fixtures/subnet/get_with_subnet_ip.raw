@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "subnet": {
+    "ip": "11.11.12.111",
+    "mask": 29,
+    "gateway": "123.123.123.123",
+    "server_ip": "88.198.123.123",
+    "failover": false,
+    "locked": false,
+    "traffic_warnings": false,
+    "traffic_hourly": 100,
+    "traffic_daily": 500,
+    "traffic_monthly": 2
+  }
+}

@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "server": {
+      "server_ip": "11.11.11.111",
+      "product": "DS 3000",
+      "dc": 6,
+      "traffic": "5 TB",
+      "status": "ready",
+      "throttled": true,
+      "cancelled": false,
+      "paid_until": "2010-09-02"
+    }
+  },
+  {
+    "server": {
+      "server_ip": "11.11.11.112",
+      "product": "X5",
+      "dc": 5,
+      "traffic": "2 TB",
+      "status": "ready",
+      "throttled": false,
+      "cancelled": false,
+      "paid_until": "2010-06-11"
+    }
+  }
+]
