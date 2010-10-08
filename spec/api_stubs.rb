@@ -13,6 +13,7 @@ def uri(path = nil)
   url
 end
 
+
 FakeWeb.allow_net_connect = false
 
 
@@ -74,8 +75,6 @@ FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
 
 FakeWeb.register_uri :post,   uri("#{WORKING_IP}"),
                      :response => fixture('post.raw')  
-
-          
 
 
 @resource = 'rdns'
