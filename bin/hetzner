@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
-require 'hetzner-api'
+require "rubygems"
+require "bundler/setup"
+require "hetzner-api"
 
 if ENV['HETZNER_API_CUCUMBER_TEST']
   puts 'testing mode'
