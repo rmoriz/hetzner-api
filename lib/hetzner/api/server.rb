@@ -11,8 +11,8 @@ module Hetzner
         get_server_or_servers server_ip
       end
       
-    private
-    
+      private
+      
       def  get_server_or_servers(server_ip = nil)
         path = "/server"
         path << "/#{server_ip}" if server_ip

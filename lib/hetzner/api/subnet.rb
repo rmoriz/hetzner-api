@@ -9,12 +9,12 @@ module Hetzner
       
       # shows information of all IP subnets of the customer 
       def subnets?
-        get_subnets_or_subnet
+        get_subnet_or_subnets
       end   
       
-      # shows information of a given IP subnets of the customer
+      # shows information of a given IP subnet of the customer
       def subnet?(ip)
-        get_subnets_or_subnet ip
+        get_subnet_or_subnets ip
       end
       
       # sets or unsets traffic warning limits on a specific IP subnet address
@@ -25,7 +25,7 @@ module Hetzner
       
       private
       
-      def get_subnets_or_subnet(ip = nil)
+      def get_subnet_or_subnets(ip = nil)
         path = "/subnet"
         path << "/#{ip}" if ip
         perform_get path
