@@ -103,9 +103,35 @@ FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
                                           
 FakeWeb.register_uri :post,   uri("#{WORKING_IP}?traffic_warnings=true&traffic_monthly=2342"),
                      :response => fixture('post_activate_with_data.raw')
-                     
+
 FakeWeb.register_uri :post,   uri("#{WORKING_IP}?traffic_warnings=false"),
                      :response => fixture('post_deactivate_with_data.raw')
 
+
+@resource = 'subnet'
+
+FakeWeb.register_uri :get,    uri,
+                     :response => fixture('get.raw')
+
+FakeWeb.register_uri :get,    uri(nil, "?server_ip=#{WORKING_IP}"),
+                     :response => fixture('get_with_server_ip.raw')
+                                          
+FakeWeb.register_uri :get,    uri("#{WORKING_SUBNET_IP}"),
+                     :response => fixture('get_with_subnet_ip.raw')
+                                          
+FakeWeb.register_uri :post,   uri("#{WORKING_SUBNET_IP}?traffic_warnings=true&traffic_monthly=2342"),
+                     :response => fixture('post_activate_with_data.raw')
+
+FakeWeb.register_uri :post,   uri("#{WORKING_SUBNET_IP}?traffic_warnings=false"),
+                     :response => fixture('post_deactivate_with_data.raw')
+
+
+@resource = 'server'
+
+FakeWeb.register_uri :get,    uri,
+                     :response => fixture('get.raw')
+
+FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
+                     :response => fixture('get_with_server_ip.raw')
 
 #pp FakeWeb::Registry.instance.uri_map

@@ -1,4 +1,5 @@
 WORKING_IP             = '11.11.11.111'
+WORKING_SUBNET_IP      = '11.11.12.111'
 UNKOWN_IP              = '11.11.11.222'
 
 RESET_IP_NOT_AVAILABLE = '11.11.11.223'
