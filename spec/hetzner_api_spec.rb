@@ -288,7 +288,7 @@ describe "Plesk" do
     @h = Hetzner::API.new API_USERNAME, API_PASSWORD
   end
   
-  it "should be able to query plesk boot status" do
+  it "should be able to query plesk boot option status" do
     result = @h.boot_plesk? WORKING_IP
     result.response.should be_an_instance_of Net::HTTPOK
     result['plesk']['server_ip'].should == WORKING_IP
@@ -296,7 +296,7 @@ describe "Plesk" do
     result['plesk']['password'].should be_nil
   end
   
-  it "should be able to set plesk boot status" do
+  it "should be able to activate plesk boot option" do
     result = @h.boot_plesk! WORKING_IP, 'Fedora-13', '32', 'en_US', 'dr-gerner-aus-gzsz.confixx.de'
     result.response.should be_an_instance_of Net::HTTPOK
     result['plesk']['server_ip'].should == WORKING_IP
@@ -304,7 +304,7 @@ describe "Plesk" do
     result['plesk']['password'].should_not be_nil
   end
   
-  it "should be able to disable plesk boot status" do
+  it "should be able to disable plesk boot option" do
     result = @h.disable_boot_plesk! WORKING_IP
     result.response.should be_an_instance_of Net::HTTPOK
     result['plesk']['server_ip'].should == WORKING_IP
