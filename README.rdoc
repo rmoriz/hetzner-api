@@ -26,6 +26,74 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 
 <tt>h.rdns! "111.111.111.222", "web100.falkenstein.de.example.com"</tt>
 
+== Coverage
+
+  Reset
+    query
+      should list available reset options for all servers
+      should list available reset options for a specific IP
+      should fail when IP is unknown
+      should fail when IP has no reset option
+    execution
+      should reset the specific IP
+      should fail for the specific IP if input is invalid
+      should fail for the specific IP if a manual reset is active
+      should fail for the specific IP if reset is unavailable
+      should fail for the specific IP if IP is unknown
+
+  Boot
+    query boot configuration
+      should display the boot configuration
+    the rescue system
+      should be able to activate
+      should be able to deactivate
+
+  Rdns
+    should query the current rdns status
+    should be able to set a new ptr
+    should be able to remove a new ptr
+
+  VNC
+    should be able to query vnc boot status
+    should be able to set vnc boot status
+    should be able to disable vnc boot status
+
+  WOL
+    should be able to query WOL status
+    should be able to send a WOL notification
+
+  IP
+    information
+      should be able to display all IP addresses of the customer account
+      should be able to display a IP address of the customer account
+      should be able to display all IP addresses for a given server IP address
+    manage traffic warnings
+      should be able to activate and set traffic warning limits on a specific IP address
+      should be able to deactivate traffic warnings for a specific IP address
+
+  Subnet
+    information
+      should be able to display all IP subnets of the customer account
+      should be able to display a IP subnet of the customer account
+      should be able to display all IP addresses for a given server IP address
+    manage traffic warnings
+      should be able to activate and set traffic warning limits on a specific IP address
+      should be able to deactivate traffic warnings for a specific IP address
+
+  Server
+    information
+      should be able to display all servers of the customer account
+      should be able to display a specific server by its IP address
+
+  Plesk
+    should be able to query plesk boot option status
+    should be able to activate plesk boot option
+    should be able to disable plesk boot option
+
+  Traffic
+    should display the traffic for a specific ip address and a subnet
+    should display the traffic for serveral IP addresse and no subnet
+    should display the traffic for subnets and no ip address
 
 
 == Readme (rdoc)
