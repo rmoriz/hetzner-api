@@ -12,7 +12,7 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 
 == Example
 
-<b>See spec/hetzner_api_spec.rb[link:/spec/hetzner_api_spec.rb] for nice examples!</b>
+<b>See spec/hetzner_api_spec.rb[link:spec/hetzner_api_spec.rb] for nice examples!</b>
 
 <tt>h = Hetzner::API.new "username", "password"</tt>
 
