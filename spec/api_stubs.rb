@@ -68,6 +68,15 @@ FakeWeb.register_uri :post,   uri("#{WORKING_IP}/vnc?arch=32&lang=en_US&dist=Fed
 FakeWeb.register_uri :delete, uri("#{WORKING_IP}/vnc"),
                      :response => fixture('vnc/delete.raw')  
 
+FakeWeb.register_uri :get,    uri("#{WORKING_IP}/plesk"),
+                     :response => fixture('plesk/get.raw')
+
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}/plesk?arch=32&lang=en_US&dist=Fedora-13&hostname=dr-gerner-aus-gzsz.confixx.de"),
+                     :response => fixture('plesk/post.raw') # perl2exe insider               
+
+FakeWeb.register_uri :delete, uri("#{WORKING_IP}/plesk"),
+                     :response => fixture('plesk/delete.raw')  
+
 
 @resource = 'wol'
 
@@ -133,5 +142,6 @@ FakeWeb.register_uri :get,    uri,
 
 FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
                      :response => fixture('get_with_server_ip.raw')
+
 
 #pp FakeWeb::Registry.instance.uri_map

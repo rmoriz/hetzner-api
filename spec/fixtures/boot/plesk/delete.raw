@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "plesk": {
+    "server_ip": "11.11.11.111",
+    "dist": ["CentOS 5.4 minimal","Debian 5.0 minimal"],
+    "arch": [64,32],
+    "lang": ["en","de"],
+    "active": false,
+    "password": null,
+    "hostname": null
+  }
+}
