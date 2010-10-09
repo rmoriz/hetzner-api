@@ -12,6 +12,8 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 
 == Example
 
+<b>See spec/hetzner_api_spec.rb[link:/spec/hetzner_api_spec.rb] for nice examples!</b>
+
 <tt>h = Hetzner::API.new "username", "password"</tt>
 
 <tt>h.reset? "111.111.111.111"</tt>
@@ -23,6 +25,8 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 <tt>h.wol! "111.111.111.222"</tt>
 
 <tt>h.rdns! "111.111.111.222", "web100.falkenstein.de.example.com"</tt>
+
+
 
 == Readme (rdoc)
 
