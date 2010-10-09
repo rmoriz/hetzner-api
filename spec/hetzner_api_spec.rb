@@ -313,3 +313,50 @@ describe "Plesk" do
   end
 end
 
+describe "Traffic" do
+   before(:all) do
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
+  end
+  
+  it "should display the traffic for a specific ip address and a subnet" do
+    options = {
+      :ips     => [WORKING_IP],
+      :subnets => [WORKING_SUBNET_IP],
+      :from    => DateTime.parse('10.10.2010 01:00'),
+      :to      => DateTime.parse('10.10.2010 10:21'),
+      :type    => :day
+    }
+
+    result = @h.traffic? options
+
+    result.response.should be_an_instance_of Net::HTTPOK
+  end
+  
+  it "should display the traffic for serveral IP addresse and no subnet" do
+    options = {
+      :ips     => [WORKING_IP, WORKING_IP_2],
+      :subnets => [],
+      :from    => "01.09.2010",
+      :to      => "01.10.2010",
+      :type    => :month
+    }
+
+    result = @h.traffic? options
+
+    result.response.should be_an_instance_of Net::HTTPOK
+  end 
+ 
+  it "should display the traffic for subnets and no ip address" do
+    options = {
+      :ips     => [],
+      :subnets => [WORKING_SUBNET_IP, WORKING_SUBNET_IP_2],
+      :from    => "01.01.2010",
+      :to      => "01.10.2010",
+      :type    => :year
+    }
+
+    result = @h.traffic? options
+
+    result.response.should be_an_instance_of Net::HTTPOK
+  end 
+end

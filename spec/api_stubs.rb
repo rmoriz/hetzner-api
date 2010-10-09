@@ -144,4 +144,15 @@ FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
                      :response => fixture('get_with_server_ip.raw')
 
 
+@resource = 'traffic'
+
+FakeWeb.register_uri :post,   uri(nil, "?from=2010-10-10T01&type=day&ip[]=#{WORKING_IP}&to=2010-10-10T10&subnet[]=#{WORKING_SUBNET_IP}"),
+                     :response => fixture('post_with_one_ip_and_one_subnet_day.raw')
+
+FakeWeb.register_uri :post,   uri(nil, "?from=2010-09-01&type=month&ip[]=#{WORKING_IP}&to=2010-10-01&ip[]=#{WORKING_IP_2}"),
+                     :response => fixture('post_with_two_ips_and_no_subnet_month.raw')
+
+FakeWeb.register_uri :post,   uri(nil, "?from=2010-01&to=2010-10&type=year&subnet[]=#{WORKING_SUBNET_IP}&subnet[]=#{WORKING_SUBNET_IP_2}"),
+                     :response => fixture('post_with_two_subnets_and_no_ip_year.raw')
+                     
 #pp FakeWeb::Registry.instance.uri_map
