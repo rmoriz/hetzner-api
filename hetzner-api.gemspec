@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'httparty'
   s.add_dependency 'thor'
+  s.add_dependency 'json'
+  s.add_dependency 'xml-simple'
   
   s.add_development_dependency "bundler", ">= 1.0.2"
   s.add_development_dependency "autotest"
