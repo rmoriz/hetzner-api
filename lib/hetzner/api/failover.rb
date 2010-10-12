@@ -10,7 +10,7 @@ module Hetzner
       
       # redirects the failover_ip to another server ip
       def failover!(failover_ip, active_server_ip)
-        path = "/rdns/#{failover_ip}"
+        path = "/failover/#{failover_ip}"
         perform_post path, :query => { :active_server_ip => active_server_ip }
       end
     end

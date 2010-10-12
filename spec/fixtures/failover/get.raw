@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "failover":
+    {
+      "ip":"22.22.22.222",
+      "netmask":"255.255.255.255",
+      "server_ip": "22.22.22.222",
+      "active_server_ip": "22.22.22.222"
+    }
+  },
+  {
+    "failover":
+    {
+      "ip":"22.22.22.223",
+      "netmask":"255.255.255.255",
+      "server_ip": "22.22.22.223",
+      "active_server_ip": "22.22.22.222"
+    }
+  }
+]

@@ -313,6 +313,45 @@ describe "Plesk" do
   end
 end
 
+describe "Failover" do
+  before(:all) do
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
+  end
+  
+  it "should be able to query the status of all failover IPs" do
+    result = @h.failover?
+    result.response.should be_an_instance_of Net::HTTPOK
+    result.parsed_response.should have(2).entries
+    
+    # default in mode
+    result[0]['failover']['ip'].should               == FAILOVER_IP
+    result[0]['failover']['active_server_ip'].should == FAILOVER_IP
+    
+    # currently re-routed
+    result[1]['failover']['ip'].should == FAILOVER_IP_2
+    result[1]['failover']['active_server_ip'].should == FAILOVER_IP
+  end
+  
+  it "should be able to query the status of a single failover IP" do
+    result = @h.failover? FAILOVER_IP
+    result.response.should be_an_instance_of Net::HTTPOK
+    result['failover']['ip'].should               == FAILOVER_IP
+    result['failover']['netmask'].should          == '255.255.255.255' 
+    result['failover']['server_ip'].should        == FAILOVER_IP
+    result['failover']['active_server_ip'].should == WORKING_IP
+  end
+  
+  it "should be able to set the status of a single failover IP" do
+    result = @h.failover! FAILOVER_IP, WORKING_IP_2
+    result.response.should be_an_instance_of Net::HTTPOK
+    result['failover']['ip'].should               == FAILOVER_IP
+    result['failover']['netmask'].should          == '255.255.255.255' 
+    result['failover']['server_ip'].should        == FAILOVER_IP
+    result['failover']['active_server_ip'].should == WORKING_IP_2
+  end
+end
+
+
 describe "Traffic" do
    before(:all) do
     @h = Hetzner::API.new API_USERNAME, API_PASSWORD

@@ -154,5 +154,16 @@ FakeWeb.register_uri :post,   uri(nil, "?from=2010-09-01&type=month&ip[]=#{WORKI
 
 FakeWeb.register_uri :post,   uri(nil, "?from=2010-01&to=2010-10&type=year&subnet[]=#{WORKING_SUBNET_IP}&subnet[]=#{WORKING_SUBNET_IP_2}"),
                      :response => fixture('post_with_two_subnets_and_no_ip_year.raw')
+
+
+@resource = 'failover'
+
+FakeWeb.register_uri :get,    uri,
+                     :response => fixture('get.raw')
                      
+FakeWeb.register_uri :get,    uri("#{FAILOVER_IP}"),
+                     :response => fixture('get_with_failover_ip.raw')
+
+FakeWeb.register_uri :post,    uri("#{FAILOVER_IP}?active_server_ip=#{WORKING_IP_2}"),
+                     :response => fixture('post_with_active_server_ip.raw')                     
 #pp FakeWeb::Registry.instance.uri_map

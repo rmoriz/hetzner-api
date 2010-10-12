@@ -1,1 +1,2 @@
-default: --format html --out report.html --format pretty
+default: --format pretty
+autotest: features -r features --format pretty --color
