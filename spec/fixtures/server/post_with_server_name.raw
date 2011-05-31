@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "server": {
+    "server_ip": "11.11.11.111",
+    "server_name": "krautchan100",
+    "product": "EQ 8",
+    "dc": 11,
+    "traffic": "5 TB",
+    "status": "ready",
+    "throttled": false,
+    "cancelled": false,
+    "paid_until": "2010-08-04",
+    "ip": ["11.11.11.111"],
+    "subnet": [{"ip": "2a01:4f8:111:4221::", "mask": "64"}],
+    "reset": true,
+    "rescue": true,
+    "vnc": true,
+    "windows": true,
+    "plesk": true,
+    "wol": true
+  }
+}

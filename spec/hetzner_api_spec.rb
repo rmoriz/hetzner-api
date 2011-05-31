@@ -264,11 +264,11 @@ describe 'Subnet' do
 end
 
 describe "Server" do
-  describe "information" do
-    before(:all) do
-      @h = Hetzner::API.new API_USERNAME, API_PASSWORD
-    end
+  before(:all) do
+    @h = Hetzner::API.new API_USERNAME, API_PASSWORD
+  end
 
+  describe "information" do
     it "should be able to display all servers of the customer account" do
       result = @h.servers?
       result.response.should be_an_instance_of Net::HTTPOK
@@ -280,6 +280,13 @@ describe "Server" do
       result.response.should be_an_instance_of Net::HTTPOK
       result.parsed_response.should have_at_least(1).entry
     end
+  end
+
+  it "should be able to set a server_name" do
+    result = @h.server! WORKING_IP, :server_name => 'krautchan100'
+    result.response.should be_an_instance_of Net::HTTPOK
+    result.parsed_response.should have_at_least(1).entry
+    result.parsed_response['server_name'] == 'krautchan100'
   end
 end
 

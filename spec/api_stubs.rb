@@ -143,6 +143,8 @@ FakeWeb.register_uri :get,    uri,
 FakeWeb.register_uri :get,    uri("#{WORKING_IP}"),
                      :response => fixture('get_with_server_ip.raw')
 
+FakeWeb.register_uri :post,   uri("#{WORKING_IP}?server_name=krautchan100"),
+                     :response => fixture('post_with_server_name.raw')
 
 @resource = 'traffic'
 
