@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
   
-  s.add_development_dependency "bundler", ">= 1.0.2"
-  s.add_development_dependency "autotest"
-  s.add_development_dependency "autotest-fsevent"
-  s.add_development_dependency "autotest-growl"
-  s.add_development_dependency "rspec",   ">= 2.0.0"
+  s.add_development_dependency "bundler",            ">= 1.0.2"
+  s.add_development_dependency "rspec",              ">= 2.6.0"
+  s.add_development_dependency "guard-rspec",        ">= 0.3.1"
+  s.add_development_dependency "growl"
+  s.add_development_dependency "background_process", ">= 1.2"
   s.add_development_dependency "fakeweb"
   s.add_development_dependency "cucumber"
   s.add_development_dependency "aruba"
