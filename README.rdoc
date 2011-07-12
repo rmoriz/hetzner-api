@@ -6,7 +6,7 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 
 == Installation
 
-<b>gem install hetzner-api</b> 
+<b>gem install hetzner-api</b>
 
 (you may want to use sudo for that.)
 
@@ -25,6 +25,12 @@ see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
 <tt>h.wol! "111.111.111.222"</tt>
 
 <tt>h.rdns! "111.111.111.222", "web100.falkenstein.de.example.com"</tt>
+
+== Continuous Integration
+
+{Build Status on Travis-CI}[link:http://travis-ci.org/rmoriz/hetzner-api]:
+
+http://travis-ci.org/rmoriz/hetzner-api.png
 
 == Coverage
 
