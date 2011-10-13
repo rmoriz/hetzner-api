@@ -2,7 +2,7 @@
 
 A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server management API.
 
-see http://wiki.hetzner.de/index.php?title=Robot_Webservice_en for details.
+see http://wiki.hetzner.de/index.php/Robot_Webservice/en for details.
 
 == Installation
 
