@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "growl"
   s.add_development_dependency "background_process", ">= 1.2"
   s.add_development_dependency "fakeweb"
-  s.add_development_dependency "cucumber"
+  s.add_development_dependency "cucumber",           ">= 1.1.0"
   s.add_development_dependency "aruba"
 
   s.files        = `git ls-files`.split("\n")
