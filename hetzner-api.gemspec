@@ -11,22 +11,23 @@ Gem::Specification.new do |s|
   s.summary     = "A wrapper for Hetzner.de's server management API"
   s.description = "A wrapper for Hetzner.de's server management API"
 
-  s.required_rubygems_version = ">= 1.3.6"
+  s.required_rubygems_version = "~> 1.3.6"
   s.rubyforge_project         = "hetzner-api"
 
-  s.add_dependency 'httparty', '>= 0.8.3'
+  s.add_dependency 'httparty', '~> 0.8.3'
   s.add_dependency 'thor'
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
 
-  s.add_development_dependency "bundler",            ">= 1.1.4"
-  s.add_development_dependency "rspec",              ">= 2.10.0"
-  s.add_development_dependency "guard-rspec",        ">= 1.1.0"
+  s.add_development_dependency "bundler",            "~> 1.1.4"
+  s.add_development_dependency "rspec",              "~> 2.10.0"
+  s.add_development_dependency "guard-rspec",        "~> 1.1.0"
   s.add_development_dependency "growl"
-  s.add_development_dependency "background_process", ">= 1.3"
+  s.add_development_dependency "background_process", "~> 1.3"
   s.add_development_dependency "fakeweb"
-  s.add_development_dependency "cucumber",           ">= 1.2.1"
+  s.add_development_dependency "cucumber",           "~> 1.2.1"
   s.add_development_dependency "aruba"
+  s.add_development_dependency "rake",               "~> 0.9.2.2"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
