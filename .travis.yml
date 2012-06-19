@@ -5,4 +5,4 @@ rvm:
   - rbx
   - ree
   - ruby-head
-script: bundle exec rspec spec/
+script: rake test

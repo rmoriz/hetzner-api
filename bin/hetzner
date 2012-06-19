@@ -4,8 +4,7 @@ require "bundler/setup"
 require "hetzner-api"
 
 if ENV['HETZNER_API_CUCUMBER_TEST']
-  puts 'testing mode'
-  require 'fakeweb'                                 
+  require 'fakeweb'
   require File.expand_path File.dirname(__FILE__) + '/../spec/spec_constants'
   require File.expand_path File.dirname(__FILE__) + '/../spec/api_stubs'
 end
