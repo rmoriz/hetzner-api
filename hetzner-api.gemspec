@@ -14,6 +14,10 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = "~> 1.3.6"
   s.rubyforge_project         = "hetzner-api"
 
+  if RUBY_PLATFORM == 'java'
+    s.add_runtime_dependency 'jruby-openssl'
+  end
+
   s.add_dependency 'httparty', '~> 0.8.3'
   s.add_dependency 'thor'
   s.add_dependency 'json'
