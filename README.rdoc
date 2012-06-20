@@ -30,7 +30,7 @@ see http://wiki.hetzner.de/index.php/Robot_Webservice/en for details.
 
 {Build Status on Travis-CI}[link:http://travis-ci.org/rmoriz/hetzner-api]:
 
-http://travis-ci.org/rmoriz/hetzner-api.png
+{<img src="https://secure.travis-ci.org/rmoriz/hetzner-api.png?branch=master" alt="Build Status" />}[http://travis-ci.org/rmoriz/hetzner-api]
 
 == Coverage
 
