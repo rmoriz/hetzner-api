@@ -123,6 +123,6 @@ The gem and the author are not related to Hetzner AG!
 
 == Copyright
 
-Copyright (c) 2011 Roland Moriz. See LICENSE for details.
+Copyright (c) 2012 Roland Moriz. See LICENSE for details.
 
 {Ruby on Rails Entwicklung}[http://moriz.de/] -> Moriz GmbH
