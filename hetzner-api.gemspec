@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "A wrapper for Hetzner.de's server management API"
   s.description = "A wrapper for Hetzner.de's server management API"
 
-  s.required_rubygems_version = "~> 1.3.6"
+  s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "hetzner-api"
 
   if RUBY_PLATFORM == 'java'
