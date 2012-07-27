@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
 
-  s.add_development_dependency "bundler",            "~> 1.1.4"
-  s.add_development_dependency "rspec",              "~> 2.10.0"
-  s.add_development_dependency "guard-rspec",        "~> 1.1.0"
+  s.add_development_dependency "bundler",            "~> 1.1.5"
+  s.add_development_dependency "rspec",              "~> 2.11.0"
+  s.add_development_dependency "guard-rspec",        "~> 1.2.0"
   s.add_development_dependency "growl"
   s.add_development_dependency "background_process", "~> 1.3"
   s.add_development_dependency "fakeweb"
