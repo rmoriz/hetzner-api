@@ -125,4 +125,6 @@ The gem and the author are not related to Hetzner AG!
 
 Copyright (c) 2012 Roland Moriz. See LICENSE for details.
 
-{Ruby on Rails Entwicklung}[http://moriz.de/] -> Moriz GmbH
+{Ruby on Rails Freelancer}[https://roland.io/]
+
+{Ruby on Rails Entwicklung}[https://moriz.de/] -> Moriz GmbH
