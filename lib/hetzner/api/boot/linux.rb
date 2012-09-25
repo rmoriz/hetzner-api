@@ -11,6 +11,11 @@ module Hetzner
           path = "/boot/#{ip}/linux"
           perform_post path, :query => {:dist => dist, :arch => arch, :lang => lang }
         end
+
+        def disable_boot_linux!(ip)
+          path = "/boot/#{ip}/linux"
+          perform_delete path
+        end
       end
     end
   end

@@ -83,6 +83,9 @@ FakeWeb.register_uri :get,    uri("#{WORKING_IP}/linux"),
 FakeWeb.register_uri :post,   uri("#{WORKING_IP}/linux?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
                      :response => fixture('linux/post.raw')
 
+FakeWeb.register_uri :delete, uri("#{WORKING_IP}/linux"),
+                     :response => fixture('linux/delete.raw')
+
 
 @resource = 'wol'
 

@@ -95,8 +95,9 @@ describe "Boot" do
       result.response.should be_an_instance_of Net::HTTPOK
     end
 
-    pending "should be able to deactivate the installation" do
-
+    it "should be able to deactivate the installation" do
+      result = @hetzner_api.disable_boot_linux! WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
     end
   end
 
