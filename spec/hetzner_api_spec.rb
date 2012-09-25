@@ -90,8 +90,9 @@ describe "Boot" do
       result.response.should be_an_instance_of Net::HTTPOK
     end
 
-    pending "should be able to activate the installation" do
-
+    it "should be able to activate the installation" do
+      result = @hetzner_api.boot_linux! WORKING_IP, "CentOS 6.3 minimal", "64", "en"
+      result.response.should be_an_instance_of Net::HTTPOK
     end
 
     pending "should be able to deactivate the installation" do
