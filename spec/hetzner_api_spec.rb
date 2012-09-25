@@ -80,6 +80,27 @@ describe "Boot" do
     end
   end
 
+  describe "a linux system" do
+    before(:all) do
+      @hetzner_api = Hetzner::API.new API_USERNAME, API_PASSWORD
+    end
+
+    it "should be able to query the boot options" do
+      result = @hetzner_api.boot_linux? WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to activate the installation" do
+      result = @hetzner_api.boot_linux! WORKING_IP, "CentOS 6.3 minimal", "64", "en"
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to deactivate the installation" do
+      result = @hetzner_api.disable_boot_linux! WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+  end
+
   describe "the rescue system" do
     before(:all) do
       @h = Hetzner::API.new API_USERNAME, API_PASSWORD

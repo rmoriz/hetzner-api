@@ -1,6 +1,7 @@
 module Hetzner
   class API
     module Boot
+      include Linux
       include Plesk
       include Rescue
       include VNC
