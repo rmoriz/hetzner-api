@@ -85,15 +85,6 @@ FakeWeb.register_uri :post,   uri("#{WORKING_IP}/plesk?arch=32&lang=en_US&dist=F
 FakeWeb.register_uri :delete, uri("#{WORKING_IP}/plesk"),
                      :response => fixture('plesk/delete.raw')  
 
-FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/linux"),
-                     :response => full_fixture('boot/linux/get.raw')
-
-FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/linux", "?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
-                     :response => full_fixture('boot/linux/post.raw')
-
-FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/linux"),
-                     :response => full_fixture('boot/linux/delete.raw')
-
 
 @resource = 'wol'
 
