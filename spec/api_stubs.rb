@@ -3,15 +3,19 @@ require 'fakeweb'
 @base_dir = File.dirname(__FILE__)
 
 def fixture(path)
-  file = File.expand_path(@base_dir + '/fixtures/' + @resource + '/' + path)
-  file
+  File.expand_path(@base_dir + '/fixtures/' + @resource + '/' + path)
+end
+
+def full_uri(resource, path = nil, args = nil)
+  url = "https://#{API_USERNAME}:#{API_PASSWORD}@#{API_SERVER}"
+  url << "/#{resource}"
+  url << "/#{path}" if path
+  url << "#{args}" if args
+  url
 end
 
 def uri(path = nil, args = nil)
-  url = "https://#{API_USERNAME}:#{API_PASSWORD}@#{API_SERVER}/#{@resource}"
-  url << "/#{path}" if path
-  url << "#{args}"  if args
-  url
+  full_uri(@resource, path, args)
 end
 
 
@@ -77,13 +81,13 @@ FakeWeb.register_uri :post,   uri("#{WORKING_IP}/plesk?arch=32&lang=en_US&dist=F
 FakeWeb.register_uri :delete, uri("#{WORKING_IP}/plesk"),
                      :response => fixture('plesk/delete.raw')  
 
-FakeWeb.register_uri :get,    uri("#{WORKING_IP}/linux"),
+FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/linux"),
                      :response => fixture('linux/get.raw')
 
-FakeWeb.register_uri :post,   uri("#{WORKING_IP}/linux?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
+FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/linux", "?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
                      :response => fixture('linux/post.raw')
 
-FakeWeb.register_uri :delete, uri("#{WORKING_IP}/linux"),
+FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/linux"),
                      :response => fixture('linux/delete.raw')
 
 
