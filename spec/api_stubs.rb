@@ -1,9 +1,13 @@
 require 'fakeweb'
 
-@base_dir = File.dirname(__FILE__)
+FIXTURE_BASE_DIR = File.dirname(__FILE__) + '/fixtures'
+
+def full_fixture(fixture_base_name)
+  File.expand_path(FIXTURE_BASE_DIR + '/' + fixture_base_name)
+end
 
 def fixture(path)
-  File.expand_path(@base_dir + '/fixtures/' + @resource + '/' + path)
+  full_fixture(@resource + '/' + path)
 end
 
 def full_uri(resource, path = nil, args = nil)
@@ -82,13 +86,13 @@ FakeWeb.register_uri :delete, uri("#{WORKING_IP}/plesk"),
                      :response => fixture('plesk/delete.raw')  
 
 FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/linux"),
-                     :response => fixture('linux/get.raw')
+                     :response => full_fixture('boot/linux/get.raw')
 
 FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/linux", "?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
-                     :response => fixture('linux/post.raw')
+                     :response => full_fixture('boot/linux/post.raw')
 
 FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/linux"),
-                     :response => fixture('linux/delete.raw')
+                     :response => full_fixture('boot/linux/delete.raw')
 
 
 @resource = 'wol'
