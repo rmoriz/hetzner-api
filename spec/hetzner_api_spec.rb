@@ -110,6 +110,36 @@ describe "Boot" do
     end
   end
 
+  describe "a windows system" do
+    before(:all) do
+      @hetzner_api = Hetzner::API.new API_USERNAME, API_PASSWORD
+    end
+
+    it "should be able to query the boot options" do
+      FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/windows"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.boot_windows? WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to activate the installation" do
+      FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/windows", "?lang=en"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.boot_windows! WORKING_IP, "en"
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to deactivate the installation" do
+      FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/windows"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.disable_boot_windows! WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+  end
+
   describe "the rescue system" do
     before(:all) do
       @h = Hetzner::API.new API_USERNAME, API_PASSWORD

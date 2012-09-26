@@ -7,7 +7,7 @@ module Hetzner
           perform_get path
         end
 
-        def boot_windows!(ip, lan)
+        def boot_windows!(ip, lang)
           path = "/boot/#{ip}/windows"
           perform_post path, :query => { :lang => lang }
         end
