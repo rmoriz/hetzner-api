@@ -24,14 +24,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'xml-simple'
 
   s.add_development_dependency "bundler",            "~> 1.2.2"
-  s.add_development_dependency "rspec",              "~> 2.11.0"
-  s.add_development_dependency "guard-rspec",        "~> 1.2.0"
-  s.add_development_dependency "growl"
-  s.add_development_dependency "background_process", "~> 1.3"
-  s.add_development_dependency "fakeweb"
+  s.add_development_dependency "rspec",              "~> 2.12.0"
+  s.add_development_dependency "guard-rspec",        "~> 2.3.1"
+  s.add_development_dependency "fakeweb",            "~> 1.3.0"
   s.add_development_dependency "cucumber",           "~> 1.2.1"
   s.add_development_dependency "aruba"
-  s.add_development_dependency "rake",               "~> 0.9.2.2"
+  s.add_development_dependency "rake"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
