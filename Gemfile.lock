@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hetzner-api (1.0.6)
+    hetzner-api (1.1.0)
       httparty (~> 0.10.0)
       json
       thor
