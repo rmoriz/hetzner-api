@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     hetzner-api (1.0.6)
-      httparty (~> 0.8.3)
+      httparty (~> 0.10.0)
       json
       thor
       xml-simple
@@ -36,7 +36,7 @@ GEM
     guard-rspec (2.3.1)
       guard (>= 1.1)
       rspec (~> 2.11)
-    httparty (0.8.3)
+    httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
     json (1.7.5)
@@ -67,7 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   aruba
-  bundler (~> 1.2.2)
+  bundler
   cucumber (~> 1.2.1)
   fakeweb (~> 1.3.0)
   guard-rspec (~> 2.3.1)

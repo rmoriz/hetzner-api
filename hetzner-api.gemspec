@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jruby-openssl'
   end
 
-  s.add_dependency 'httparty', '~> 0.8.3'
+  s.add_dependency 'httparty', '~> 0.10.0'
   s.add_dependency 'thor'
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
