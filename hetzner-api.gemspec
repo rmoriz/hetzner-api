@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "cucumber",           "~> 1.2.1"
   s.add_development_dependency "aruba"
   s.add_development_dependency "rake"
+  s.add_development_dependency "coveralls"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact

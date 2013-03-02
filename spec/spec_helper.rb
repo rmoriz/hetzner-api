@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require "spec_constants"
 require "api_stubs"
 
