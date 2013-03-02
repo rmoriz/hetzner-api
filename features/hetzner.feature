@@ -12,6 +12,7 @@ Feature: Hetzner
     When I run `hetzner failover --username='myusername' --password='mycoolpassword'`
     Then the output should contain "active_server_ip"
 
+  @wip
   Scenario: Display the status of a failover IP
     When I run `hetzner failover 11.11.11.111 --username='myusername' --password='mycoolpassword'`
     Then the output should contain "11.11.11.111"
