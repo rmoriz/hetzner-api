@@ -4,6 +4,8 @@ A HTTParty[http://httparty.rubyforge.org/] based wrapper for Hetzner.de's server
 
 see http://wiki.hetzner.de/index.php/Robot_Webservice/en for details.
 
+{<img src="https://badge.fury.io/rb/hetzner-api.png" alt="Gem Version" />}[http://badge.fury.io/rb/hetzner-api]
+
 == Installation
 
 <b>gem install hetzner-api</b>
