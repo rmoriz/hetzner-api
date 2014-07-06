@@ -1,4 +1,4 @@
-= Status 2014-07: looking for sponsoring/new maintainers.
+==== Status 2014/07: looking for sponsoring/new maintainers.
 
 = hetzner-api
 
