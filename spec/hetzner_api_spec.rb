@@ -86,17 +86,56 @@ describe "Boot" do
     end
 
     it "should be able to query the boot options" do
+      FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/linux"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
       result = @hetzner_api.boot_linux? WORKING_IP
       result.response.should be_an_instance_of Net::HTTPOK
     end
 
     it "should be able to activate the installation" do
+      FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/linux", "?dist=CentOS%206.3%20minimal&lang=en&arch=64"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
       result = @hetzner_api.boot_linux! WORKING_IP, "CentOS 6.3 minimal", "64", "en"
       result.response.should be_an_instance_of Net::HTTPOK
     end
 
     it "should be able to deactivate the installation" do
+      FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/linux"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
       result = @hetzner_api.disable_boot_linux! WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+  end
+
+  describe "a windows system" do
+    before(:all) do
+      @hetzner_api = Hetzner::API.new API_USERNAME, API_PASSWORD
+    end
+
+    it "should be able to query the boot options" do
+      FakeWeb.register_uri :get,    full_uri("boot", "#{WORKING_IP}/windows"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.boot_windows? WORKING_IP
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to activate the installation" do
+      FakeWeb.register_uri :post,   full_uri("boot", "#{WORKING_IP}/windows", "?lang=en"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.boot_windows! WORKING_IP, "en"
+      result.response.should be_an_instance_of Net::HTTPOK
+    end
+
+    it "should be able to deactivate the installation" do
+      FakeWeb.register_uri :delete, full_uri("boot", "#{WORKING_IP}/windows"),
+                           :response => Net::HTTPOK.new('1.1', '200', 'OK')
+
+      result = @hetzner_api.disable_boot_windows! WORKING_IP
       result.response.should be_an_instance_of Net::HTTPOK
     end
   end
