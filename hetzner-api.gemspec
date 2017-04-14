@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jruby-openssl'
   end
 
-  s.add_dependency 'httparty', '~> 0.10.0'
+  s.add_dependency 'httparty', '~> 0.14.0'
   s.add_dependency 'thor'
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "cucumber",           "~> 1.2.1"
   s.add_development_dependency "aruba"
   s.add_development_dependency "rake"
-  s.add_development_dependency "coveralls",          "~> 0.6.5"
+  s.add_development_dependency "coveralls"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
