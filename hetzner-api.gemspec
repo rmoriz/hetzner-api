@@ -23,15 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'json'
   s.add_dependency 'xml-simple'
 
-  s.add_development_dependency "bundler"
-  s.add_development_dependency "rspec",              "~> 2.12.0"
-  s.add_development_dependency "guard-rspec",        "~> 2.3.1"
-  s.add_development_dependency "fakeweb",            "~> 1.3.0"
-  s.add_development_dependency "cucumber",           "~> 1.2.1"
-  s.add_development_dependency "aruba"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "coveralls"
-
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
   s.require_path = 'lib'
